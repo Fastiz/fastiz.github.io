@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script src="./js/drawCanvas.js"></script>
+        <script src="./js/display.js"></script>
+        <script src="./js/modal.js"></script>
+        <script src="./js/init.js"></script>
+
+        <script src="./dependencies/two.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/modal.css">
+        <link rel="stylesheet" type="text/css" href="css/radio_with_images.css">
+
+
+        <title>Colorblind Proof</title>
+    </head>
+    <body onload="init()">
+
+    <div class="title">
+        <h1>Colorblind drawings</h1><span>The colorblind will only see circles</span>
+    </div>
+
+    <div class="block">
+        <h3>About</h3>
+        <p>
+            This tool provides the user a drawing canvas for then generating an image composed by circles colored in a certain way to be hard for a colorblind to distinguish.
+        </p>
+    </div>
+
+    <div class="block">
+        <div class="section">
+            <h3>Create the image that you want to hide from colorblind people</h3>
+            <div class="step">
+                <h4>Draw your image inside the box</h4>
+                <p>Use the white color to erase and then select black to continue drawing. <br> Also you can clear the whole box with the 'clear' button. </p>
+                <div class="drawing-tool-container">
+                    <div class="drawing-tool-square" id="black" onclick="setColor(this)"></div>
+                    <div class="drawing-tool-square" id="white" onclick="setColor(this)"></div>
+                    <input type="button" value="Clear" id="clr" size="23" onclick="erase()">
+
+                </div>
+                <canvas id="can" width="400" height="400"></canvas>
+            </div>
+
+        </div>
+        <div class="section">
+            <h3>Set the generator configuration</h3>
+            <form>
+                <h4>Choose a color palette</h4>
+                <p>Note that some people can distinguish some of the following color schemes but will struggle with others.</p>
+                <label>
+                    <input type="radio" name="palette" value="circle7" id="circle7" onclick="setPalette(this)" checked>
+                    <img src="assets/circle7.png" alt="circle7" width="90" height="90"/>
+                </label>
+
+                <label>
+                    <input type="radio" name="palette" value="circle8" id="circle8" onclick="setPalette(this)">
+                    <img src="assets/circle8.png" alt="circle8" width="90" height="90"/>
+                </label>
+
+                <label>
+                    <input type="radio" name="palette" value="circle9" id="circle9" onclick="setPalette(this)">
+                    <img src="assets/circle9.png" alt="circle9" width="90" height="90"/>
+                </label>
+
+                <label>
+                    <input type="radio" name="palette" value="circle12" id="circle12" onclick="setPalette(this)">
+                    <img src="assets/circle12.png" alt="circle12" width="90" height="90"/>
+                </label>
+
+                <label>
+                    <input type="radio" name="palette" value="circle13" id="circle13" onclick="setPalette(this)">
+                    <img src="assets/circle13.png" alt="circle13" width="90" height="90"/>
+                </label>
+
+                <label>
+                    <input type="radio" name="palette" value="circle16" id="circle16" onclick="setPalette(this)">
+                    <img src="assets/circle16.png" alt="circle16" width="90" height="90"/>
+                </label>
+
+                <h4>Set the radius of the circles</h4>
+                <p>This is for the radius of the circles that will fill up the drawing. They are generated choosing<br>a random number between the min and max values. Note that with a bigger circle the resolution<br>will be lower and with a smaller radius will take more time to generate.</p>
+                <label for="max-radius">Maximum:</label><input type="number" id="max-radius" value="5">
+                <label for="max-radius">Minimum:</label><input type="number" id="min-radius" value="3">
+            </form>
+
+            <input type="button" value="Generate" id="generate" size="30">
+
+        </div>
+    </div>
+
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="loading">
+                <h3>Generating the image</h3>
+
+                <p id="loading-message"></p>
+            </div>
+            <div id="result">
+                <h3>Result</h3>
+
+                <canvas id="draw-shapes" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    </body>
+</html>

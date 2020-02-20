@@ -1,0 +1,100 @@
+body{
+    background-color: white;
+}
+
+.title {
+    border-bottom: 1px solid;
+    border-color: darkgrey;
+    padding-bottom: 10px;
+}
+
+h1 {
+    margin-left: 30px;
+    font-family: "Abyssinica SIL", sans-serif;
+    color: #1C5D99;
+}
+
+label {
+    font-family: "Abyssinica SIL", serif;
+    margin-right: 10px;
+}
+
+h2, h3, h4 {
+    font-family: "Abyssinica SIL", sans-serif;
+}
+
+p{
+    font-family: "Abyssinica SIL", serif;
+}
+
+.title span {
+    font-size: 20px;
+    color: grey;
+    margin-top: 0px;
+    margin-left:30px;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.title h1{
+    margin-bottom: 0;
+    padding:0;
+}
+
+.block {
+    margin: 12px 70px 12px 70px;
+    padding: 10px;
+    float: top;
+    position: relative;
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+.section {
+    float: left;
+    margin-right: 40px;
+    word-wrap: break-word;
+}
+
+#generate {
+    height: 50px;
+    width: 200px;
+    background-color: #4796ce;
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-right: 30%;
+    font-family: "Abyssinica SIL", serif;
+    font-size: 20px;
+}
+
+.drawing-tool-container {
+    overflow: auto;
+    width: 400px;
+    position: relative;
+}
+
+.drawing-tool-container > input{
+    position: absolute;
+    right: 0;
+    margin-top: 4px;
+}
+
+.drawing-tool-square {
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+    margin: 4px;
+    float: left;
+}
+
+#black {
+    background-color: black;
+}
+
+#white {
+    background-color: white;
+}
+
+canvas {
+    border: 2px solid #335C81;
+}
