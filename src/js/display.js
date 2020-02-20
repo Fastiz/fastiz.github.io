@@ -68,7 +68,7 @@ function displayResult(){
     const maxRadius = parseInt(document.getElementById('max-radius').value || MAX_RADIUS);
     const minRadius = parseInt(document.getElementById('min-radius').value || MIN_RADIUS);
 
-    const worker = new Worker('./js/webworker.js');
+    const worker = new Worker('./src/js/webworker.js');
 
     worker.postMessage({
         maxRadius,
