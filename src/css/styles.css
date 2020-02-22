@@ -97,4 +97,6 @@ p{
 
 canvas {
     border: 2px solid #335C81;
+    height: 400px;
+    width: 400px;
 }
