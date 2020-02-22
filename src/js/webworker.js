@@ -70,7 +70,7 @@ function imageDataToBooleanMatrix(imageData){
         for(let j=0; j<imageData.width; j++){
             const pos = (i*imageData.width + j)*4; //RGBA
 
-            if(array[pos+3] === 255){
+            if(array[pos] === 0){
                 newRow.push(true);
             }else{
                 newRow.push(false);

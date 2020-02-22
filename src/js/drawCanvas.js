@@ -22,6 +22,9 @@ function drawCanvasInit(){
     canvas = document.getElementById('can');
     ctx = canvas.getContext('2d');
 
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0,0, WIDTH, HEIGHT);
+
     ctx.lineWidth = 10;
 
     canvas.addEventListener("mousemove", function (e) {
@@ -64,10 +67,10 @@ function drawCanvasInit(){
 function setColor(obj){
     switch (obj.id) {
         case "black":
-            color = "#000000";
+            ctx.strokeStyle = '#000000';
             break;
         case "white":
-            color = "#ffffff";
+            ctx.strokeStyle = "#ffffff";
             break;
     }
 }
