@@ -6,8 +6,12 @@ const PALETTES = {
         drawingColors: ['#89994b', '#c5d277', '#b0b77a'],
         backgroundColors: ['#faa183', '#ffba51', '#fff44c', '#ffb545']
     },
-    circle13: {
+    circle13_1: {
         drawingColors: ['#ca567d', '#f68888'],
+        backgroundColors: ['#625542', '#a58f7b', '#7e6e68']
+    },
+    circle13_3: {
+        drawingColors: ['#ec4849', '#f68888'],
         backgroundColors: ['#625542', '#a58f7b', '#7e6e68']
     },
     circle16: {
