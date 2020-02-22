@@ -67,6 +67,17 @@ p{
     font-size: 20px;
 }
 
+#download-button {
+    height: 30px;
+    width: 120px;
+    background-color: #4796ce;
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-right: 30%;
+    font-family: "Abyssinica SIL", serif;
+    font-size: 14px;
+}
+
 .drawing-tool-container {
     overflow: auto;
     width: 400px;
