@@ -90,19 +90,14 @@ function drawCircles(circles){
     const backgroundColors = PALETTES[currentpalette].backgroundColors,
         drawingColors = PALETTES[currentpalette].drawingColors;
 
-    const two = new Two({
-        type: Two.Types.canvas,
-        width: WIDTH,
-        height: HEIGHT,
-        domElement: document.getElementById('draw-shapes')
-    });
+    const canvas = document.getElementById('draw-shapes');
+    const ctx = canvas.getContext('2d');
 
-    const background = two.makeRectangle(WIDTH/2,HEIGHT/2,WIDTH, HEIGHT);
-    background.fill = '#ffffff';
-    background.noStroke();
+
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
     circles.forEach((circle)=>{
-        const newCircle = two.makeCircle(circle.x, circle.y, circle.radius);
 
         let colors;
         if(circle.draw){
@@ -111,14 +106,12 @@ function drawCircles(circles){
             colors = backgroundColors;
         }
 
-        newCircle.fill = colors[Math.floor(Math.random()*colors.length)];
-
-
-        newCircle.noStroke();
+        ctx.fillStyle = colors[Math.floor(Math.random()*colors.length)];
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+        ctx.fill();
     });
 
-
-    two.update();
 }
 
 

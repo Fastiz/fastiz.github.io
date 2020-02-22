@@ -11,6 +11,8 @@ let two;
 
 let canvas;
 
+let ctx;
+
 const DEVICE = {
     MOUSE: 0,
     TOUCH: 1
@@ -18,13 +20,9 @@ const DEVICE = {
 
 function drawCanvasInit(){
     canvas = document.getElementById('can');
+    ctx = canvas.getContext('2d');
 
-    two = new Two({
-        type: Two.Types.canvas,
-        width: WIDTH,
-        height: HEIGHT,
-        domElement: canvas
-    });
+    ctx.lineWidth = 10;
 
     canvas.addEventListener("mousemove", function (e) {
         draw(e, DEVICE.MOUSE);
@@ -108,13 +106,10 @@ function draw(e, device){
     currY = pos.y;
 
     if(isMouseDown){
-        const line = two.makeLine(prevX, prevY, currX, currY);
-
-        line.stroke = color;
-
-        line.linewidth = STROKE_SIZE;
-
-        two.update();
+        ctx.beginPath();
+        ctx.moveTo(prevX, prevY);
+        ctx.lineTo(currX, currY);
+        ctx.stroke();
     }
 }
 
