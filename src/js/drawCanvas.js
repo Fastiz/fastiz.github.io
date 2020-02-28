@@ -92,8 +92,7 @@ function getMousePos(evt, device) {
 }
 
 function erase(){
-    two.clear();
-    two.update();
+    ctx.fillRect(0,0,WIDTH, HEIGHT);
 }
 
 function draw(e, device){
